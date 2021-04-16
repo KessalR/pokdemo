@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { FilterPokemonPipePipe } from './filter-pokemon--pipe.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { MatSliderModule } from '@angular/material/slider';
     NgbModule,
     FormsModule,
     MatSliderModule,
+    HttpClientModule,
     BrowserAnimationsModule 
 
   ],
