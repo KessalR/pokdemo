@@ -1,0 +1,10 @@
+<p>my-component works!</p>
+<input [(ngModel)]="id"> {{id}}
+<br>
+<input [(ngModel)]=searchPokeName ">  
+<select name="pokemon " id="pokemon-select " [(ngModel)]="pokemon ">
+<option *ngFor="let pokemon of listPokemon | filterPokemonPipe: 'nom':searchPokeName ">
+    {{pokemon.nom}}
+    {{pokemon.id}}
+</option>
+</select>
