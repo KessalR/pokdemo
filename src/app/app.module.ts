@@ -7,7 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MyComponentComponent } from './my-component/my-component.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPokemonPipePipe } from './filter-pokemon--pipe.pipe';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,10 +17,13 @@ import { FilterPokemonPipePipe } from './filter-pokemon--pipe.pipe';
   ],
 
   imports: [
+  
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule 
+    FormsModule,
+    MatSliderModule,
+    BrowserAnimationsModule 
 
   ],
   providers: [],

@@ -18,5 +18,8 @@ export class MyComponentComponent implements OnInit {
     this.listPokemon.push(new Pokemon('bulbizarre',1));
     this.listPokemon.push(new Pokemon('salameche',4));
   }
+  go(){
+    console.log(this.pokemon);
+  }
 
 }
