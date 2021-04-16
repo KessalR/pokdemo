@@ -7,6 +7,9 @@ import { Pokemon } from '../pokemon';
   styleUrls: ['./my-component.component.css']
 })
 export class MyComponentComponent implements OnInit {
+  id: string = '';
+  pokemon = '';
+  searchPokeName: string="";
   listPokemon:Pokemon[]=[];
   constructor() { }
   
@@ -15,7 +18,5 @@ export class MyComponentComponent implements OnInit {
     this.listPokemon.push(new Pokemon('bulbizarre',1));
     this.listPokemon.push(new Pokemon('salameche',4));
   }
-  id: string = '';
-  pokemon = '';
-  searchPokeName: string="";
+
 }
