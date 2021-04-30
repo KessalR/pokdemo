@@ -1,7 +1,8 @@
+<p>my-component works!</p>
+Entrez le nom du pokémon :
 <input [(ngModel)]="searchPokeName">
-
 <br>
-<select name="pokemon" id="pokemon-select" [(ngModel)]="pokemon">
+<select name="pokemon " id="pokemon-select " [(ngModel)]="pokemon ">
 <option *ngFor="let pokemon of listPokemon | filterPokemonPipe: 'nom':searchPokeName ">
     {{pokemon.nom}}
     {{pokemon.id}}
@@ -10,8 +11,6 @@
 <button (click)="go()">GO</button>
 <BR>
 <div *ngIf="pokeDetail">
-
-    <app-pokedetail [detail]="pokeDetail"></app-pokedetail>
     Le pokemon sélectionné est {{pokeDetail.name}}
 
     <ul>

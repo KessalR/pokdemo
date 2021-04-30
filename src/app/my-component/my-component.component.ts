@@ -24,7 +24,7 @@ export class MyComponentComponent implements OnInit {
     //this.listPokemon.push(new Pokemon('salameche',4));
     this.pokeService.getPokemon().subscribe( (data)=> {
       data.results.forEach( (e, index) => {
-        this.listPokemon.push(new Pokemon('' + index, e.name));
+        this.listPokemon.push(new Pokemon(e.name, index));
       } );
     } );
   }
