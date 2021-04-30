@@ -1,12 +1,20 @@
-<p>my-component works!</p>
-<input [(ngModel)]="id"> {{id}}
-<br>
 <input [(ngModel)]="searchPokeName">
+
 <br>
-<select name="pokemon " id="pokemon-select " [(ngModel)]="pokemon ">
+<select name="pokemon" id="pokemon-select" [(ngModel)]="pokemon">
 <option *ngFor="let pokemon of listPokemon | filterPokemonPipe: 'nom':searchPokeName ">
     {{pokemon.nom}}
     {{pokemon.id}}
 </option>
 </select>
 <button (click)="go()">GO</button>
+<BR>
+<div *ngIf="pokeDetail">
+
+    <app-pokedetail [detail]="pokeDetail"></app-pokedetail>
+    Le pokemon sélectionné est {{pokeDetail.name}}
+
+    <ul>
+        <li *ngFor="let ability of pokeDetail.abilities"> {{abilities.ability.name}}</li>
+    </ul>
+</div>

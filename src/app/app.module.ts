@@ -10,11 +10,13 @@ import { FilterPokemonPipePipe } from './filter-pokemon--pipe.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { HttpClientModule } from '@angular/common/http';
+import { PokedetailComponent } from './pokedetail/pokedetail.component';
 @NgModule({
   declarations: [
     AppComponent,
     MyComponentComponent,
-    FilterPokemonPipePipe
+    FilterPokemonPipePipe,
+    PokedetailComponent
   ],
 
   imports: [

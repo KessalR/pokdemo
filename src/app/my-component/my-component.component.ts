@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokeAPIServiceService } from '../poke-apiservice.service';
-import { Pokemon } from '../pokemon';
+import { PokeShareInfoService } from '../poke-share-info.service';
+import { PokeDetail, Pokemon, pokeServiceRes } from '../pokemon';
 
 @Component({
   selector: 'app-my-component',
@@ -9,11 +10,13 @@ import { Pokemon } from '../pokemon';
   providers: [PokeAPIServiceService]
 })
 export class MyComponentComponent implements OnInit {
-  id: string = '';
+  id: string;
   pokemon = '';
   searchPokeName: string="";
   listPokemon:Pokemon[]=[];
-  constructor(private pokeService : PokeAPIServiceService) { }
+  pokeDetail:PokeDetail;
+  constructor(private pokeService : PokeAPIServiceService,
+    private pokeShareInfoService: PokeShareInfoService) { }
   
   ngOnInit(): void {
     //this.listPokemon.push(new Pokemon('pikachu',25));
@@ -21,12 +24,16 @@ export class MyComponentComponent implements OnInit {
     //this.listPokemon.push(new Pokemon('salameche',4));
     this.pokeService.getPokemon().subscribe( (data)=> {
       data.results.forEach( (e, index) => {
-        this.listPokemon.push(new Pokemon(e.name, index));
+        this.listPokemon.push(new Pokemon('' + index, e.name));
       } );
     } );
   }
   go(){
-    console.log(this.pokemon);
+    this.pokeShareInfoService.setValue(this.id)
+    if (this.pokemon != ''){
+      this.pokeService.getPokemonInfo(this.pokemon).subscribe(data => this.pokeDetail = data);
+    }
+    
   }
 
 }
