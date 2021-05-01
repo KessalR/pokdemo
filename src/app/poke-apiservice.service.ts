@@ -17,6 +17,7 @@ export class PokeAPIServiceService {
     
   }
   getPokemonInfo(id:string): Observable<PokeDetail> {
+    console.log(id);
     return this.http.get<PokeDetail>(url + id + '/');
     
   }

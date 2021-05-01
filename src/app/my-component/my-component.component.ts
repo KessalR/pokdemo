@@ -11,7 +11,7 @@ import { PokeDetail, Pokemon, pokeServiceRes } from '../pokemon';
 })
 export class MyComponentComponent implements OnInit {
   id: string;
-  pokemon = '';
+  pokemon:any;
   searchPokeName: string="";
   listPokemon:Pokemon[]=[];
   pokeDetail:PokeDetail;
@@ -24,14 +24,15 @@ export class MyComponentComponent implements OnInit {
     //this.listPokemon.push(new Pokemon('salameche',4));
     this.pokeService.getPokemon().subscribe( (data)=> {
       data.results.forEach( (e, index) => {
-        this.listPokemon.push(new Pokemon(e.name, index));
+        this.listPokemon.push(new Pokemon(e.name, index+1));
       } );
     } );
   }
   go(){
-    this.pokeShareInfoService.setValue(this.id)
-    if (this.pokemon != ''){
-      this.pokeService.getPokemonInfo(this.pokemon).subscribe(data => this.pokeDetail = data);
+    this.pokeShareInfoService.setValue(this.pokemon.id)
+    
+    if (this.pokemon != ""){
+      this.pokeService.getPokemonInfo(this.pokemon.id).subscribe(data => this.pokeDetail = data);
     }
     
   }

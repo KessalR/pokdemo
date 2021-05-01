@@ -1,3 +1,12 @@
+export class Pokemon {
+ 
+    nom:string;
+    id:number;
+    constructor(nom: string,id: number) {
+    this.nom = nom;
+    this.id = id;
+     }
+}
 export interface pokeServiceRes {
     count:number;
     next:string;
@@ -174,18 +183,8 @@ export interface Type {
     type: Species;
 }
 
-
 export interface IPokemon {
+    id: number;
     name:string;
     url:string;
-}
-
-export class Pokemon {
- 
-    nom:string;
-    id:number;
-    constructor(nom,id) {
-    this.nom = nom;
-    this.id = id;
-     }
 }
