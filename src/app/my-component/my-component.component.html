@@ -1,16 +1,21 @@
 Entrez le nom du pokémon :
 <input [(ngModel)]="searchPokeName" name="searchPokeName">
 <br>
+<br>
 <select [(ngModel)]="pokemon" name="pokemon">
 <option *ngFor="let pokemon of listPokemon | filterPokemonPipe: 'nom': searchPokeName" [ngValue]="pokemon">
     {{pokemon.nom}}
     {{pokemon.id}}
 </option>
 </select>
-<button type="button" class="btn btn-primary" (click)="go()">GO</button>
+<br>
+<br>
+<button type="button" class="btn btn-dark" (click)="go()">GO</button>
 <BR>
+<br>
 <div *ngIf="pokeDetail">
     Le pokemon sélectionné est {{pokeDetail.name}}
+    <br> Ses abilités sont les suivantes :
 
     <ul>
         <li *ngFor="let ability of pokeDetail.abilities"> {{ability.ability.name}}</li>
